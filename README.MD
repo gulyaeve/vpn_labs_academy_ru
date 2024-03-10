@@ -5,7 +5,7 @@
 ## Установка
 Установите python3 и sstp-client при помощи Homebrew:
 1) Откройте терминал
-2) Установите Homebrew, выполнив команду: `/bin/bash -c “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)”` и дождитесь завершения
+2) Установите Homebrew, выполнив команду (одной строкой):<br>`/bin/bash -c “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)”`<br>и дождитесь завершения
 3) Установите необходимые пакеты: для этого выполните последовательно три команды:
    - `brew update`
    - `brew install wget`
