@@ -51,7 +51,7 @@ def setup_routes():
 
 
 def sstp_connect():
-    run(f"{vpn_sstp_command} &", shell=True)
+    run(f"{vpn_sstp_command}", shell=True)
 
 
 if __name__ == '__main__':
