@@ -6,16 +6,29 @@ from threading import Thread, Event, Timer
 from urllib.request import Request, urlopen
 
 
-assert getuser() == "root", "Запустите скрипт при помощи sudo"
-assert path.exists("/usr/local/sbin/sstpc"), "Не установлен sstp-client"
+# Если ваш путь к sstpc отличается, то замените его здесь:
+sstpc_path = "/usr/local/sbin/sstpc"
 
 vpn_host = "labs.academy.ru"
+routes_path = "http://10.26.81.1/labs/access.txt"
+
+
+assert getuser() == "root", "Запустите скрипт при помощи sudo"
+assert path.exists(sstpc_path), "Не установлен sstp-client"
+
+
+# Переменные vpn_login и vpn_pass можно заменить своими значениями, например:
+# vpn_login = "my_login"
+# vpn_pass = "my_pass"
 vpn_login = input("Введите логин для vpn-соединения: ")
 vpn_pass = getpass("Введите пароль для vpn-соединения (вводимые символы скрыты): ")
 
-routes_path = "http://10.26.81.1/labs/access.txt"
+# Экранирование символов в пароле
+vpn_pass = fr"{vpn_pass}"
+
+
 vpn_sstp_command = (
-    "/usr/local/sbin/sstpc "
+    f"{sstpc_path} "
     "--cert-warn "
     "--tls-ext "
     f"--user {vpn_login} "
