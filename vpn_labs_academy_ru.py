@@ -32,7 +32,7 @@ vpn_sstp_command = (
     "--cert-warn "
     "--tls-ext "
     f"--user {vpn_login} "
-    f"--password {vpn_pass} "
+    f"--password '{vpn_pass}' "
     f"--uuid {vpn_host} "
     f"{vpn_host} "
     "usepeerdns "
